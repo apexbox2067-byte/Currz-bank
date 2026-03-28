@@ -1,11 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banking Landing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #111827, #020617);
+    color: white;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+.header {
+    padding: 25px 0;
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #94a3b8;
+    position: relative;
+}
+
+/* underline */
+.nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #5F6FFF;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: white;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+.hero {
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #5F6FFF;
+    filter: blur(150px);
+    top: -100px;
+    left: -100px;
+    opacity: 0.3;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* TEXT */
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.hero-text span {
+    background: linear-gradient(90deg, #5F6FFF, #9F7AEA);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #5F6FFF, #7C3AED);
+    border: none;
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid #5F6FFF;
+    background: transparent;
+    color: #5F6FFF;
+}
+
+/* CARD */
+.card {
+    width: 380px;
+    height: 220px;
+    border-radius: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #5F6FFF, #9F7AEA);
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    top: -40px;
+    right: -40px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-logo {
+    display: flex;
+}
+
+.circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.orange { background: orange; }
+.red { background: red; margin-left: -10px; }
+
+.card-number {
+    margin-top: 50px;
+    letter-spacing: 3px;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* FEATURES */
+.features {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.features-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.feature-card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    width: 250px;
+}
+
+/* STATS */
+.stats {
+    padding: 60px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+/* CTA */
+.cta {
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* FOOTER */
+.footer {
+    padding: 40px 0;
+    background: #020617;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer a {
+    display: block;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+</style>
 </head>
+
 <body>
-    <h1>Dota bank</h1>
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">💳 Bankify</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#stats">Stats</a>
+        </nav>
+        <button class="btn btn-outline">Login</button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-container">
+
+        <div class="hero-text">
+            <h1>Make Your Payment <span>More Secure</span></h1>
+            <p>Modern banking with fast and secure payments.</p>
+
+            <div class="buttons">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-outline">Learn More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span>VISA</span>
+                <div class="card-logo">
+                    <div class="circle orange"></div>
+                    <div class="circle red"></div>
+                </div>
+            </div>
+
+            <div class="card-number">
+                1234 5678 9012 3456
+            </div>
+
+            <div class="card-bottom">
+                <div>
+                    <small>Card Holder</small>
+                    <p>YOUR NAME</p>
+                </div>
+                <div>
+                    <small>Expires</small>
+                    <p>12/28</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="features" id="features">
+    <h2 class="section-title">Why Choose Us</h2>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Secure</h3>
+            <p>Encrypted payments</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Fast</h3>
+            <p>Instant transfers</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Mobile</h3>
+            <p>Use anywhere</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats" id="stats">
+    <div class="stats-container">
+        <div>
+            <h2>10M+</h2>
+            <p>Users</p>
+        </div>
+        <div>
+            <h2>500K+</h2>
+            <p>Transactions</p>
+        </div>
+        <div>
+            <h2>99%</h2>
+            <p>Uptime</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Start Now</h2>
+    <button class="btn btn-primary">Create Account</button>
+</section>
+
+<footer class="footer">
+    <div class="container footer-container">
+        <div>
+            <h3>Bankify</h3>
+            <p>Modern banking</p>
+        </div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
