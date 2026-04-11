@@ -3,9 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Banking Landing</title>
+
+    <!-- Шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Dota bank</h1>
+
+<header class="header">
+    <div class="container header-container">
+        <div class="logo">💳 Bankify</div>
+
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#stats">Stats</a>
+        </nav>
+
+        <button class="btn btn-outline">Login</button>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-container">
+
+        <div class="hero-text">
+            <h1>Make Your Payment <span>More Secure</span></h1>
+            <p>Modern banking with fast and secure payments.</p>
+
+            <div class="buttons">
+                <button class="btn btn-primary">Get Started</button>
+                <button class="btn btn-outline">Learn More</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <span>VISA</span>
+
+                <div class="card-logo">
+                    <div class="circle orange"></div>
+                    <div class="circle red"></div>
+                </div>
+            </div>
+
+            <div class="card-number">
+                1234 5678 9012 3456
+            </div>
+
+            <div class="card-bottom">
+                <div>
+                    <small>Card Holder</small>
+                    <p>YOUR NAME</p>
+                </div>
+
+                <div>
+                    <small>Expires</small>
+                    <p>12/28</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="features" id="features">
+    <h2 class="section-title">Why Choose Us</h2>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Secure</h3>
+            <p>Encrypted payments</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Fast</h3>
+            <p>Instant transfers</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>Mobile</h3>
+            <p>Use anywhere</p>
+        </div>
+    </div>
+</section>
+
+<section class="stats" id="stats">
+    <div class="stats-container">
+        <div>
+            <h2>10M+</h2>
+            <p>Users</p>
+        </div>
+        <div>
+            <h2>500K+</h2>
+            <p>Transactions</p>
+        </div>
+        <div>
+            <h2>99%</h2>
+            <p>Uptime</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Start Now</h2>
+    <button class="btn btn-primary">Create Account</button>
+</section>
+
+<footer class="footer">
+    <div class="container footer-container">
+        <div>
+            <h3>Bankify</h3>
+            <p>Modern banking</p>
+        </div>
+
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
